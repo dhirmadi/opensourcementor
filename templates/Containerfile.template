@@ -1,0 +1,22 @@
+# syntax=docker/dockerfile:1
+# Base image: choose what fits your stack (UBI suggested)
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest
+
+# Set working directory
+WORKDIR /app
+
+# Copy source (uncomment for your app)
+# COPY . .
+
+# Install runtime dependencies (example; adjust for your stack)
+# RUN microdnf install -y nodejs && microdnf clean all
+
+# Runtime port
+ENV PORT=8080
+EXPOSE 8080
+
+# Optional healthcheck (adjust path)
+# HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl -fsS http://localhost:${PORT}/health || exit 1
+
+# Default command (placeholder). Replace with your actual start command.
+CMD ["/bin/sh","-lc","python -m http.server ${PORT}"]
