@@ -53,3 +53,11 @@ See also: `docs/TROUBLESHOOTING.md` for more.
 - Keep services simple; one primary web container is enough for the hackathon
 - Use environment variables (see `.env`) and do not commit secrets
 - Document as you go in your team `README.md`
+
+## Remote access (MiniCloud)
+- Provide your public SSH key to the host for your team user (team1/team2)
+- SSH/SCP port: `30022`
+- SSH: `ssh -p 30022 teamX@<MINICLOUD_HOST>`
+- SCP: `scp -P 30022 ./localfile teamX@<MINICLOUD_HOST>:/srv/containers/teamX/`
+- Workspace on server: `/srv/containers/teamX`
+- Recommended: use `podman-compose` for build/run

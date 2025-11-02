@@ -52,6 +52,8 @@ PORT=8080
 
 ## 🚀 Build & Deploy
 
+We recommend using `podman-compose` for a smooth workflow.
+
 1) Copy the container template if needed:
 ```bash
 cp ../../templates/Containerfile.template ./Containerfile
@@ -76,19 +78,16 @@ http://team2.<IP>.sslip.io
 
 You do not need physical access to the server.
 
-1) Obtain credentials from organizers:
-- Host: `<MINICLOUD_HOST>` (e.g., `minicloud.<IP>.sslip.io` or a public IP)
-- User: `team2`
-- SSH key: your public key (recommended)
+1) Provide your public SSH key to the hackathon host (for the `team2` user). The host will add it to `~team2/.ssh/authorized_keys`.
 
-2) (If requested) Upload your SSH key:
+2) (Optional) Upload your key yourself if instructed:
 ```bash
-ssh-copy-id -i ~/.ssh/id_ed25519.pub team2@<MINICLOUD_HOST>
+ssh-copy-id -p 30022 -i ~/.ssh/id_ed25519.pub team2@<MINICLOUD_HOST>
 ```
 
-3) SSH into the environment:
+3) SSH into the environment (SSH/SCP port is 30022):
 ```bash
-ssh -i ~/.ssh/id_ed25519 team2@<MINICLOUD_HOST>
+ssh -p 30022 -i ~/.ssh/id_ed25519 team2@<MINICLOUD_HOST>
 ```
 
 4) Navigate to your workspace and work as usual:
@@ -99,14 +98,19 @@ podman-compose build && podman-compose up -d
 podman-compose logs -f
 ```
 
-5) Access your app via public route:
+5) Copy files with SCP (port 30022):
+```bash
+scp -P 30022 ./localfile team2@<MINICLOUD_HOST>:/srv/containers/team2/
+```
+
+6) Access your app via public route:
 ```
 http://team2.<IP>.sslip.io
 ```
 
 Optional (local port forward if needed):
 ```bash
-ssh -i ~/.ssh/id_ed25519 -L 28080:127.0.0.1:8080 team2@<MINICLOUD_HOST>
+ssh -p 30022 -i ~/.ssh/id_ed25519 -L 28080:127.0.0.1:8080 team2@<MINICLOUD_HOST>
 # then open http://localhost:28080
 ```
 
