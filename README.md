@@ -22,7 +22,10 @@ open-source-mentor-bot/
 │   ├── REDHAT_VALUES.md
 │   ├── FUTURE_OPENSHIFT.md
 │   ├── ARCHITECTURE_OVERVIEW.md
-│   └── LITEMAAS_REFERENCE.md
+│   ├── LITEMAAS_REFERENCE.md
+│   ├── KNOWLEDGE_GUIDE.md
+│   └── knowledge/
+│       └── README.md
 ├── templates/
 │   ├── Containerfile.template
 │   ├── container.env.template
@@ -71,6 +74,10 @@ http://<TEAM_SUBDOMAIN>.<HOST_SUFFIX>
 Example: `http://team1.<IP>.sslip.io`
 
 Quick reference for commands: see `docs/CHEATSHEET_PODMAN.md`.
+
+## Documentation and Knowledge Base
+- Contribute know-how in many formats (Markdown, images, PDFs, slides, notebooks)
+- Start at `docs/KNOWLEDGE_GUIDE.md` and place materials under `docs/knowledge/`
 
 ## Red Hat Values in Action
 - Open collaboration, transparency, community-first, automation, trust

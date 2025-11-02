@@ -19,6 +19,11 @@ Welcome! This repository is designed for a one-day hackathon and for future reus
 - Add diagrams or text to `docs/ARCHITECTURE_OVERVIEW.md` as your design evolves.
 - Capture decisions in PR descriptions for transparency.
 
+## Documentation formats (knowledge base)
+- You may contribute knowledge in multiple formats (Markdown, images, slides, PDFs, notebooks, etc.)
+- Place materials under `docs/knowledge/` and see `docs/KNOWLEDGE_GUIDE.md` for tips
+- Prefer a short markdown summary alongside binary files
+
 ## Conduct
 - Be respectful and helpful. Assume positive intent.
 - Focus on collective learning and knowledge sharing.

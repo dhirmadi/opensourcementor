@@ -36,6 +36,7 @@ Each team must present:
    - Architecture (web/api/data flow)
    - How Red Hat values are reflected in their work
 3. Short (max 5 min) demo of the application
+4. Knowledge artifacts stored under `docs/knowledge/` (Markdown, images/diagrams, PDFs/slides, spreadsheets, notebooks). Add a short summary for binaries and avoid secrets
 
 ---
 
@@ -64,6 +65,22 @@ Each team works inside:
 /srv/containers/team2
 ```
 They can connect with `podman login` and deploy containers directly.
+
+---
+
+## 📚 Knowledge Sources & Formats
+
+- Teams may create and use multiple knowledge formats:
+  - Markdown/Text (`.md`, `.txt`), Images (`.png`, `.jpg`, `.svg`), Diagrams (`.drawio`)
+  - PDFs/Slides (`.pdf`, `.pptx`, `.odp`), Spreadsheets (`.csv`, `.xlsx` – keep small)
+  - Notebooks (`.ipynb` – keep outputs small, note environment)
+- Store team-produced know-how under:
+```
+docs/knowledge/
+```
+- Include a brief markdown summary with binary files; avoid secrets
+- For diagrams, include the editable source (`.drawio`) plus an exported image (`.png`)
+- See `docs/KNOWLEDGE_GUIDE.md` for tips
 
 ---
 
