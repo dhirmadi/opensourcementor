@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Scan staged files for secrets; block commit on match.
+
+declare -a files
+while IFS= read -r -d '' f; do
+  # Skip deleted files
+  if [[ ! -e "$f" ]]; then
+    continue
+  fi
+  files+=("$f")
+done < <(git diff --cached --name-only -z)
+
+if [[ ${#files[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+# Patterns to flag
+regex=$(cat <<'REGEX'
+(-----BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----)|
+(AWS_SECRET_ACCESS_KEY)|
+(SECRET_ACCESS_KEY)|
+(LITEMAAS_API_KEY\s*=\s*.+)|
+(Authorization:\s*Bearer\s+[A-Za-z0-9._-]{20,})|
+(api[_-]?key\s*[=:]\s*.+)|
+(password\s*[=:]\s*.+)
+REGEX
+)
+
+found=0
+for f in "${files[@]}"; do
+  # Skip binary files
+  if git diff --cached --numstat -- "$f" | awk '{exit ($1=="-" && $2=="-")?0:1}'; then
+    # text file
+    if grep -I -n -E "$regex" -- "$f" > /dev/null 2>&1; then
+      echo "\n❌ Potential secret detected in staged file: $f" >&2
+      grep -I -n -E "$regex" -- "$f" | sed 's/^/  -> /' >&2 || true
+      found=1
+    fi
+  fi
+  # Explicitly block .env files if someone forced add
+  case "$f" in
+    *.env|.env|.env.*)
+      echo "\n❌ .env files must not be committed: $f" >&2
+      found=1
+      ;;
+  esac
+done
+
+if [[ $found -eq 1 ]]; then
+  cat >&2 <<'EOF'
+
+Commit blocked due to potential secrets. Remove secrets and try again.
+If this is a false positive, consider adjusting values or commit selectively.
+EOF
+  exit 1
+fi
+
+exit 0

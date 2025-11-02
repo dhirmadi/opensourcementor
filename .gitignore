@@ -20,4 +20,26 @@ __pycache__/
 .idea/
 .vscode/
 
+# Cursor IDE
+.cursor/
+.cursor*
+.cursorignore
+.cursorindexingignore
+.specstory/
+
+# Secrets and credentials
+.secrets/
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+.npmrc
+.pypirc
+
 

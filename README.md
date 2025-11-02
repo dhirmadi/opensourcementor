@@ -88,6 +88,14 @@ podman build --arch linux/amd64 -t ${IMAGE_NAME}:${TAG} .
 ```
 Use only if required by your runtime environment.
 
+## Prevent committing secrets
+A pre-commit hook is provided to block accidental commits of secrets. Enable it once per clone:
+```
+git config core.hooksPath .githooks
+chmod +x .githooks/pre-commit
+```
+The hook scans staged files for common patterns (API keys, private keys, bearer tokens, `.env` files) and blocks the commit with guidance if found.
+
 ## Contributing
 See `CONTRIBUTING.md`. Use issues and PRs even within teams to model open collaboration.
 
