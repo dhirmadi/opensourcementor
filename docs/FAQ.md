@@ -12,7 +12,6 @@ This FAQ captures common questions and the current answers from the organizers. 
 
 - **What communication channel will we use for announcements/help?**
   - We will handle announcements and support in-room verbally. Please approach a coach for help.
-  <!-- Suggestion: tighten language for clarity and professionalism: "We will handle announcements and support verbally in-room. Please approach a coach for help." Remove double space and capitalize sentence start. -->
 
 ### Infrastructure and Access
 
