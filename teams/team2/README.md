@@ -23,6 +23,7 @@ http://team2.<IP>.sslip.io
 ```
 
 ## Notes
+- Read the Hackathon FAQ: `../../docs/FAQ.md`
 - Update `compose.yaml` labels if organizers enable Traefik label routing
 - Keep this README updated with architecture notes and API endpoints
 
