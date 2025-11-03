@@ -4,6 +4,18 @@ A Podman-first, vendor-neutral starter repository for the one-day “Open Source
 
 This repository follows the brief in `HACKATHON_BRIEF.md`.
 
+See `docs/FAQ.md` for logistics, infrastructure, and judging details.
+
+## Quick Links
+- Hackathon Brief: `HACKATHON_BRIEF.md`
+- Quickstart: `docs/QUICKSTART_PODMAN.md`
+- Cheatsheet: `docs/CHEATSHEET_PODMAN.md`
+- FAQ: `docs/FAQ.md`
+- LiteMAAS Reference: `docs/LITEMAAS_REFERENCE.md`
+- Red Hat Values: `docs/REDHAT_VALUES.md`
+- Architecture Overview: `docs/ARCHITECTURE_OVERVIEW.md`
+- Team Guide Template: `docs/templates/TEAM_GUIDE_TEMPLATE.md`
+
 ## What You’ll Build Today
 - A containerized chatbot that answers beginner questions about open source and Red Hat-style collaboration
 - Uses LiteMAAS as the LLM backend (no OpenAI/Anthropic required)
@@ -23,6 +35,7 @@ open-source-mentor-bot/
 │   ├── FUTURE_OPENSHIFT.md
 │   ├── ARCHITECTURE_OVERVIEW.md
 │   ├── LITEMAAS_REFERENCE.md
+│   ├── FAQ.md
 │   ├── KNOWLEDGE_GUIDE.md
 │   └── knowledge/
 │       └── README.md
