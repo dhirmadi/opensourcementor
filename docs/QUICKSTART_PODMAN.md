@@ -30,6 +30,28 @@ podman-compose build
 podman-compose up -d
 ```
 
+### Port mapping per team
+- Team 1 should expose container port 8080 on host port 18080:
+  ```yaml
+  # teams/team1/compose.yaml
+  services:
+    app:
+      ports:
+        - "18080:8080"  # host:container
+  ```
+- Team 2 should expose container port 8080 on host port 18081:
+  ```yaml
+  # teams/team2/compose.yaml
+  services:
+    app:
+      ports:
+        - "18081:8080"  # host:container
+  ```
+
+Traefik on the host maps the team hostnames to these ports:
+- `team1.<IP>.sslip.io:80` ↔︎ `127.0.0.1:18080`
+- `team2.<IP>.sslip.io:80` ↔︎ `127.0.0.1:18081`
+
 ## 5) Access your app
 ```
 http://<TEAM_SUBDOMAIN>.<HOST_SUFFIX>

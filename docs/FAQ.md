@@ -80,6 +80,26 @@ This FAQ captures common questions and the current answers from the organizers. 
 
 - **What URL and protocol should we expose?**
   - Traefik routes traffic via hostnames using `sslip.io` (see brief). Expose HTTP on port 8080 inside your container. Access via `http://teamX.<IP>.sslip.io`. If HTTPS is enabled, TLS is terminated by Traefik at the edge.
+
+- **What host ports should teams bind, and how is Traefik mapped?**
+  - Team host port bindings:
+    - Team 1: host port `18080`
+    - Team 2: host port `18081`
+  - Traefik routing on the host:
+    - `team1.<IP>.sslip.io:80` ↔︎ `127.0.0.1:18080`
+    - `team2.<IP>.sslip.io:80` ↔︎ `127.0.0.1:18081`
+  - Recommended container port remains `8080`. Map container `8080` to the team host port via compose.
+  - Example compose `ports:`:
+    - Team 1:
+      ```yaml
+      ports:
+        - "18080:8080"  # host:container
+      ```
+    - Team 2:
+      ```yaml
+      ports:
+        - "18081:8080"  # host:container
+      ```
   <!-- Confirm scheme: should teams expect HTTPS at the edge (https://teamX.<IP>.sslip.io)? If so, note that TLS is terminated by Traefik and apps should serve plain HTTP internally. -->
 
 - **Do we need health/readiness endpoints?**

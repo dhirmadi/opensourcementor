@@ -17,6 +17,14 @@ podman-compose build
 podman-compose up -d
 ```
 
+### Ports and routing
+- Configure compose to map container `8080` to host `18080`:
+  ```yaml
+  ports:
+    - "18080:8080"  # host:container
+  ```
+- Traefik maps `team1.<IP>.sslip.io:80` to `127.0.0.1:18080`.
+
 ## 3) Access your app
 ```
 http://team1.<IP>.sslip.io
