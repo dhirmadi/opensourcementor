@@ -80,7 +80,7 @@ docs/knowledge/
 ```
 - Include a brief markdown summary with binary files; avoid secrets
 - For diagrams, include the editable source (`.drawio`) plus an exported image (`.png`)
-- See `docs/KNOWLEDGE_GUIDE.md` for tips
+- See `docs/guides/KNOWLEDGE_GUIDE.md` for tips
 
 ---
 

@@ -21,7 +21,7 @@ Welcome! This repository is designed for a one-day hackathon and for future reus
 
 ## Documentation formats (knowledge base)
 - You may contribute knowledge in multiple formats (Markdown, images, slides, PDFs, notebooks, etc.)
-- Place materials under `docs/knowledge/` and see `docs/KNOWLEDGE_GUIDE.md` for tips
+- Place materials under `docs/knowledge/` and see `docs/guides/KNOWLEDGE_GUIDE.md` for tips
 - Prefer a short markdown summary alongside binary files
 
 ## Conduct

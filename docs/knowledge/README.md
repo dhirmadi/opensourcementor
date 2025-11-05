@@ -18,4 +18,4 @@ Guidelines:
 - Include source + export for diagrams (`.drawio` + `.png`)
 - Do not include secrets or credentials
 
-See `../KNOWLEDGE_GUIDE.md` for accepted formats and tips.
+See `../guides/KNOWLEDGE_GUIDE.md` for accepted formats and tips.

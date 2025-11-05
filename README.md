@@ -8,8 +8,8 @@ See `docs/FAQ.md` for logistics, infrastructure, and judging details.
 
 ## Quick Links
 - Hackathon Brief: `HACKATHON_BRIEF.md`
-- Quickstart: `docs/QUICKSTART_PODMAN.md`
-- Cheatsheet: `docs/CHEATSHEET_PODMAN.md`
+- Quickstart: `docs/guides/QUICKSTART_PODMAN.md`
+- Cheatsheet: `docs/guides/CHEATSHEET_PODMAN.md`
 - FAQ: `docs/FAQ.md`
 - LiteMAAS Reference: `docs/LITEMAAS_REFERENCE.md`
 - Red Hat Values: `docs/REDHAT_VALUES.md`
@@ -55,7 +55,7 @@ open-source-mentor-bot/
 ```
 
 ## Quick Start (Teams)
-Follow `docs/QUICKSTART_PODMAN.md` for full details. TL;DR:
+Follow `docs/guides/QUICKSTART_PODMAN.md` for full details. TL;DR:
 
 1) Choose your team folder:
 ```
@@ -86,11 +86,11 @@ http://<TEAM_SUBDOMAIN>.<HOST_SUFFIX>
 ```
 Example: `http://team1.<IP>.sslip.io`
 
-Quick reference for commands: see `docs/CHEATSHEET_PODMAN.md`.
+Quick reference for commands: see `docs/guides/CHEATSHEET_PODMAN.md`.
 
 ## Documentation and Knowledge Base
 - Contribute know-how in many formats (Markdown, images, PDFs, slides, notebooks)
-- Start at `docs/KNOWLEDGE_GUIDE.md` and place materials under `docs/knowledge/`
+- Start at `docs/guides/KNOWLEDGE_GUIDE.md` and place materials under `docs/knowledge/`
 
 ## Red Hat Values in Action
 - Open collaboration, transparency, community-first, automation, trust
