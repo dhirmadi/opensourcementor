@@ -1,6 +1,6 @@
 # Podman + Registry + Compose — Quick Cheatsheet
 
-Use this as a fast reference during the hackathon. For deeper guidance, see `docs/QUICKSTART_PODMAN.md` and `docs/TROUBLESHOOTING.md`.
+Use this as a fast reference during the hackathon. For deeper guidance, see `docs/guides/QUICKSTART_PODMAN.md` and `docs/TROUBLESHOOTING.md`.
 
 ## Basics
 - Version: `podman --version`
